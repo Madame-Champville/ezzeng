@@ -25,9 +25,9 @@
                 <i id="menu-close" class="fas fa-times"></i>
                 <li><a href="{% url 'student_list' %}">Home</a></li>
                 <li><a class="active" href="about.html">About</a></li>
-                <li><a href="blogs.html">Blogs</a></li>
-                <li><a href="courses.html">Courses</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="{% url 'blogs_list' %}">Blogs</a></li>
+                <li><a href="{% url 'courses_list' %}">Courses</a></li>
+                <li><a href="{% url 'contact_list' %}">Contact</a></li>
                 <li><a href="#" id="open_pup_up">Sign up</a></li>
             </ul>
             <img id="menu-btn" src="{% static 'images/menu.png' %}" alt="">
@@ -270,6 +270,10 @@
         </div>
 
     </footer>
+
+
+    <script src="{% static 'js/pop_up.js' %}"></script>
+    <script src="{% static 'js/registration.js' %}"></script>
 
     <script>
         $('#menu-btn').click(function () {

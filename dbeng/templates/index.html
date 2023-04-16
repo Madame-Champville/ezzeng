@@ -22,9 +22,9 @@
             <i id="menu-close" class="fas fa-times"></i>
             <li><a class="active" href="#">Home</a></li>
             <li><a href="{% url 'about_list' %}">About</a></li>
-            <li><a href="blogs.html">Blogs</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="{% url 'blogs_list' %}">Blogs</a></li>
+            <li><a href="{% url 'courses_list' %}">Courses</a></li>
+            <li><a href="{% url 'contact_list' %}">Contact</a></li>
             <li><a href="#" id="open_pup_up">Sign up</a></li>
         </ul>
         <img id="menu-btn" src="{% static 'images/menu.png' %}" alt="">

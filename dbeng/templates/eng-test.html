@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 
 <head>
@@ -9,7 +10,7 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
 
-    <link rel="stylesheet" href="eng-test.css">
+    <link rel="stylesheet" href="{% static 'css/eng-test.css' %}">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
         integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 </head>
@@ -51,7 +52,7 @@
 
 
 
-    <script src="eng-test.js"></script>
+    <script src="{% static 'js/eng-test.js' %}"></script>
 
 
 </body>

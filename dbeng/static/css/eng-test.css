@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: linear-gradient(rgba(9, 5, 54, 0.3), rgb(9, 5, 46, 0.7)), url("harvard.jpg");
+    background-image: linear-gradient(rgba(9, 5, 54, 0.3), rgb(9, 5, 46, 0.7)), url("/static/images/harvard.jpg");
     background-position: center;
     font-family: 'Poppins', 'sans-serif';
     display: flex;

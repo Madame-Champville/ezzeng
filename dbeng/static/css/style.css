@@ -764,28 +764,9 @@ footer .copyright .pro-links i:hover {
 
 /* Blogs */
 
-#blogs-home {
-    background-image: linear-gradient(rgba(9, 5, 54, 0.3), rgb(9, 5, 46, 0.7)), url("images/blog.png");
-    width: 100%;
-    height: 80vh;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding-top: 40px;
-}
-
-#blogs-home h2 {
-    color: #fff;
-    font-size: 2.2rem;
-    letter-spacing: 1px;
-}
 
 #blogs-home {
-    background-image: linear-gradient(rgba(9, 5, 54, 0.3), rgb(9, 5, 46, 0.7)), url("images/blog.png");
+    background-image: linear-gradient(rgba(9, 5, 54, 0.3), rgb(9, 5, 46, 0.7)), url("/static/images/blog.png");
     width: 100%;
     height: 80vh;
     background-size: cover;
@@ -874,7 +855,7 @@ footer .copyright .pro-links i:hover {
 /* Courses */
 
 #course-home {
-    background-image: linear-gradient(rgba(9, 5, 54, 0.3), rgb(9, 5, 46, 0.7)), url("images/courses_back.jpg");
+    background-image: linear-gradient(rgba(9, 5, 54, 0.3), rgb(9, 5, 46, 0.7)), url("/static/images/courses_back.jpg");
     width: 100%;
     height: 80vh;
     background-size: cover;
@@ -896,7 +877,7 @@ footer .copyright .pro-links i:hover {
 /* Course_inner */
 
 #course_inner-home {
-    background-image: linear-gradient(rgba(9, 5, 54, 0.3), rgb(9, 5, 46, 0.7)), url("images/courses_back.jpg");
+    background-image: linear-gradient(rgba(9, 5, 54, 0.3), rgb(9, 5, 46, 0.7)), url("/static/images/courses_back.jpg");
     width: 100%;
     height: 80vh;
     background-size: cover;
@@ -942,9 +923,10 @@ footer .copyright .pro-links i:hover {
     width: 70%;
 }
 /* Previous height 60vh */
+/* Previous previous height 80vh */
 #course-inner .overview .course-img {
     width: 100%;
-    height: 80vh;                                                           
+    height: 100%;
     object-fit: cover;
     border-radius: 12px;
     margin-bottom: 20px;
@@ -1060,7 +1042,7 @@ footer .copyright .pro-links i:hover {
 /* Contact */
 
 #contact_home {
-    background-image: linear-gradient(rgba(9, 5, 54, 0.3), rgb(9, 5, 46, 0.7)), url("images/contact.back.jpg");
+    background-image: linear-gradient(rgba(9, 5, 54, 0.3), rgb(9, 5, 46, 0.7)), url("/static/images/contact.back.jpg");
     width: 100%;
     height: 80vh;
     background-size: cover;
