@@ -1,7 +1,29 @@
-from django.shortcuts import render
+from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404
 from django.views import generic
+from .forms import *
+from .models import Student, Teacher, Course, Attendance, Grade, Material, Schedule, Payment
 
-from .models import Student, Teacher, Course, Attendace, Grade, Material, Schedule, Payment
+
+def user(request):
+    form = UserForm()
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse('Успешно!!!')
+    context = {'form': form}
+    return render(request, 'index.html', context)
+
+def payment(request):
+    form = PaymentForm()
+    if request.method == 'POST':
+        form = PaymentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse('Успешно!!!')
+    context = {'form': form}
+    return render(request, 'payment.html', context)
 
 
 class StudentList(generic.ListView):
@@ -36,9 +58,11 @@ class CourseInnerList(generic.ListView):
     model = Course
     template_name = 'course-inner_list.html'
 
+
 class CourseInnerIndividualList(generic.ListView):
     model = Course
     template_name = 'course-inner_individual_list.html'
+
 
 class ContactList(generic.ListView):
     model = Material

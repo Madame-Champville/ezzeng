@@ -1,9 +1,14 @@
 from django.contrib import admin
-from .models import Student, Teacher, Course, Attendace, Grade, Material, Schedule, Payment
+from .models import Student, Teacher, Course, Attendance, Grade, Material, Schedule, Payment, User
 
+
+@admin.register(User)
+class UserAdmin(admin.ModelAdmin):
+    list_display = ['name', 'email', 'password']
+    search_fields = ['name',]
 @admin.register(Student)
 class StudentAdmin(admin.ModelAdmin):
-    list_display = ['first_name', 'last_name', 'email', 'phone', 'address', 'enrollment_date', 'birthday', 'group_name']
+    list_display = ['first_name', 'last_name', 'email', 'phone', 'address', 'enrollment_date', 'birthday']
     search_fields = ['first_name', 'last_name']
 
 @admin.register(Teacher)
@@ -13,12 +18,12 @@ class TeacherAdmin(admin.ModelAdmin):
 
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
-    list_display = ['course_name', 'desciption', 'course_level', 'course_duration', 'fee']
-    search_fields = ['course_name', 'desciption']
+    list_display = ['course_name', 'members', 'course_level', 'course_duration', 'fee']
+    search_fields = ['course_name', 'description']
 
-@admin.register(Attendace)
-class AttendaceAdmin(admin.ModelAdmin):
-    list_display = ['student', 'course', 'attendace_day', 'attendace_status']
+@admin.register(Attendance)
+class AttendanceAdmin(admin.ModelAdmin):
+    list_display = ['student', 'course', 'attendance_day', 'attendance_status']
     search_fields = ['student', 'course']
 
 @admin.register(Grade)
