@@ -5,18 +5,20 @@ from datetime import datetime
 
 
 class User(models.Model):
-    name = models.CharField(max_length=50)
-    email = models.EmailField(max_length=50)
-    password = models.CharField(max_length=15)
+    first_name = models.CharField(max_length=50, default='Имя')
+    last_name = models.CharField(max_length=50, default='Фамилия')
+    phone = models.CharField(max_length=50, default='Номер')
+    email = models.EmailField(max_length=50, default='Почта')
+    courses = models.CharField(max_length=50,default='Выберите курс', choices=(
+    ("General English", "Общий английский"), ("Individual lessons", "Индивидуальные занятия"), ("English for kids", "Английский для детей"), ("Online lessons", "Онлайн занятия"), ("IELTS and TOEFL", "IELTS и TOEFL"),("EAP", "Английский для академический целей")))
 
     def __str__(self):
-        return self.name
+        return self.first_name
 
 class Student(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField(max_length=50)
-    phone = models.CharField(max_length=50)
     address = models.CharField(max_length=50)
     enrollment_date = models.DateField(max_length=50)
     birthday = models.DateField(max_length=50)
@@ -96,12 +98,6 @@ class Schedule(models.Model):
 class Payment(models.Model):
     student = models.ForeignKey(User, on_delete=models.CASCADE)
     course_name = models.CharField(max_length=50, default='Не выбран курс')
-    payment_method = models.CharField(max_length=50, choices=(
-        ("visa", "Visa"),
-        ("mastercard", "MasterCard"),
-        ("paypal", "PayPal"),
-        ("elcard", "Элькарт")
-    ), default='Не выбран метод', verbose_name='Способ оплаты')
     payment_date = models.DateField(auto_now_add=True, verbose_name='Дата оплаты')
     payment_amount = models.FloatField(default=0, verbose_name='Сумма платежа')
 

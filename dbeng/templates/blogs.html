@@ -23,12 +23,12 @@
         <div class="navigation">
             <ul>
                 <i id="menu-close" class="fas fa-times"></i>
-                <li><a href="{% url 'student_list' %}">Home</a></li>
-                <li><a href="{% url 'about_list' %}">About</a></li>
-                <li><a class="active" href="{% url 'blogs_list' %}">Blogs</a></li>
-                <li><a href="{% url 'courses_list' %}">Courses</a></li>
-                <li><a href="{% url 'contact_list' %}">Contact</a></li>
-                <li><a href="#" id="open_pup_up">Sign up</a></li>
+                <li><a href="{% url 'student_list' %}">Главная</a></li>
+                <li><a href="{% url 'about_list' %}">О нас</a></li>
+                <li><a class="active" href="{% url 'blogs_list' %}">Блог</a></li>
+                <li><a href="{% url 'courses_list' %}">Курсы</a></li>
+                <li><a href="{% url 'contact_list' %}">Контакты</a></li>
+                <li><a href="#" id="open_pup_up">Регистрация</a></li>
             </ul>
             <img id="menu-btn" src="{% static 'images/menu.png' %}" alt="">
         </div>
@@ -137,7 +137,7 @@
     <!-- Home -->
 
     <section id="blogs-home">
-        <h2>Blogs</h2>
+        <h2>Блог</h2>
     </section>
 
     <!-- Blogs -->
@@ -146,71 +146,69 @@
         <div class="blogs">
             <div class="post">
                 <img src="{% static 'images/grammar.jpg' %}" alt="">
-                <h3>Learn Grammar In The Easiest Way</h3>
+                <h3>Выучи грамматику с легкостью</h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Voluptatibus esse optio quisquam impedit a nisi, consectetur 
                 facilis placeat iusto quam corrupti assumenda praesentium quod,
                 sunt animi aliquam eum dolorum voluptas!</p>
-                <a href="{% url 'post_list' %}" target="_blank">Read More</a>
+                <a href="{% url 'post_list' %}" target="_blank">Узнать больше</a>
             </div>
 
             <div class="post">
                 <img src="{% static 'images/vocabulary.jpg' %}" alt="">
-                <h3>Easy Vocabulary</h3>
+                <h3>Легкий словарь</h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Voluptatibus esse optio quisquam impedit a nisi, consectetur 
                 facilis placeat iusto quam corrupti assumenda praesentium quod,
                 sunt animi aliquam eum dolorum voluptas!</p>
-                <a href="#">Read More</a>
+                <a href="#">Узнать больше</a>
             </div>
 
             <div class="post">
                 <img src="{% static 'images/listening.jpg' %}" alt="">
-                <h3>Enhance Your Listening In The Easiest Way</h3>
+                <h3>Улучши английский на слух с легкостью</h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Voluptatibus esse optio quisquam impedit a nisi, consectetur 
                 facilis placeat iusto quam corrupti assumenda praesentium quod,
                 sunt animi aliquam eum dolorum voluptas!</p>
-                <a href="#">Read More</a>
+                <a href="#">Узнать больше</a>
             </div>
 
             <div class="post">
                 <img src="{% static 'images/writting.jpg' %}" alt="">
-                <h3>Enhance Your Writing In The Easiest Way</h3>
+                <h3>Улучши чтение на с легкостью</h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Voluptatibus esse optio quisquam impedit a nisi, consectetur 
                 facilis placeat iusto quam corrupti assumenda praesentium quod,
                 sunt animi aliquam eum dolorum voluptas!</p>
-                <a href="#">Read More</a>
+                <a href="#">Узнать больше</a>
             </div>
 
             <div class="post">
                 <img src="{% static 'images/test.jpg' %}" alt="">
-                <h3>Test Your English</h3>
+                <h3>Онлайн тест</h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Voluptatibus esse optio quisquam impedit a nisi, consectetur 
                 facilis placeat iusto quam corrupti assumenda praesentium quod,
                 sunt animi aliquam eum dolorum voluptas!</p>
-                <a href="{% url 'eng-test_list' %}" target="_blank">Test Now</a>
+                <a href="{% url 'eng-test_list' %}" target="_blank">Пройти тестирование</a>
             </div>
 
             
         </div>
 
         <div class="cate">
-            <h2>Categories</h2>
+            <h2>Категория</h2>
             <hr>
-            <a href="#">Grammar</a>
+            <a href="#">Грамматика</a>
             <hr>
-            <a href="#">Vocabulary</a>
+            <a href="#">Словарь</a>
             <hr>
-            <a href="#">Listening</a>
+            <a href="#">Английский на слух</a>
             <hr>
-            <a href="#">Writing</a>
+            <a href="#">Чтение</a>
             <hr>
-            <a href="#">Reading</a>
-            <hr>
-            <a href="#">Test</a>
+            <a href="#">Онлайн тест</a>
             <hr>
         </div>
     </section>

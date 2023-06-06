@@ -15,13 +15,13 @@ def user(request):
     context = {'form': form}
     return render(request, 'index.html', context)
 
-def payment(request):
-    form = PaymentForm()
+def enroll(request):
+    form = UserForm()
     if request.method == 'POST':
-        form = PaymentForm(request.POST)
+        form = UserForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponse('Успешно!!!')
+            return HttpResponse('Вы успешно зарегистирровались! Оплатите курс с помощью данного реквизита: 1200056156')
     context = {'form': form}
     return render(request, 'payment.html', context)
 

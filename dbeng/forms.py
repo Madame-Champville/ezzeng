@@ -5,10 +5,10 @@ class UserForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ['name', 'email', 'password']
+        fields = ['first_name', 'last_name', 'phone', 'email', 'courses']
 
 class PaymentForm(forms.ModelForm):
 
     class Meta:
         model = Payment
-        fields = ['student', 'course_name', 'payment_method', 'payment_amount']
+        fields = ['student', 'course_name', 'payment_amount']

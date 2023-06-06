@@ -4,11 +4,11 @@ from .models import Student, Teacher, Course, Attendance, Grade, Material, Sched
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
-    list_display = ['name', 'email', 'password']
+    list_display = ['first_name', 'last_name', 'phone', 'email', 'courses']
     search_fields = ['name',]
 @admin.register(Student)
 class StudentAdmin(admin.ModelAdmin):
-    list_display = ['first_name', 'last_name', 'email', 'phone', 'address', 'enrollment_date', 'birthday']
+    list_display = ['first_name', 'last_name', 'email',  'address', 'enrollment_date', 'birthday']
     search_fields = ['first_name', 'last_name']
 
 @admin.register(Teacher)
@@ -48,5 +48,5 @@ class ScheduleAdmin(admin.ModelAdmin):
 
 @admin.register(Payment)
 class PaymentAdmin(admin.ModelAdmin):
-    list_display = ['student', 'payment_date', 'payment_amount']
+    list_display = ['student', 'course_name', 'payment_date', 'payment_amount']
     search_fields = ['student', 'payment_date']

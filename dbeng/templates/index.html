@@ -20,12 +20,12 @@
     <div class="navigation">
         <ul>
             <i id="menu-close" class="fas fa-times"></i>
-            <li><a class="active" href="#">Home</a></li>
-            <li><a href="{% url 'about_list' %}">About</a></li>
-            <li><a href="{% url 'blogs_list' %}">Blogs</a></li>
-            <li><a href="{% url 'courses_list' %}">Courses</a></li>
-            <li><a href="{% url 'contact_list' %}">Contact</a></li>
-            <li><a href="#" id="open_pup_up">Sign up</a></li>
+            <li><a class="active" href="#">Главная</a></li>
+            <li><a href="{% url 'about_list' %}">О нас</a></li>
+            <li><a href="{% url 'blogs_list' %}">Блог</a></li>
+            <li><a href="{% url 'courses_list' %}">Курсы</a></li>
+            <li><a href="{% url 'contact_list' %}">Контакты</a></li>
+            <li><a href="{% url 'eng-test_list' %}" target="_blank" >Онлайн тест</a></li>
         </ul>
         <img id="menu-btn" src="{% static 'images/menu.png' %}" alt="">
     </div>
@@ -140,13 +140,13 @@
 
 {% block content %}
 <section id="home">
-    <h2>Enhance Your English With Easy English</h2>
+    <h2>Выучи английский вместе с Easy English</h2>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis neque
         suscipit aut ullam qusquam laboriosam eum nesciunt quos, molestias optio tenetur
         nobis vel sint quis veniam molestiae nemo deserunt autem!</p>
     <div class="btn">
-        <a class="blue" href="#">Learn more</a>
-        <a class="yellow" href="#">Visit Courses</a>
+        <a class="blue" href="{% url 'about_list' %}">Узанть больше</a>
+        <a class="yellow" href="{% url 'courses_list' %}">Посмотреть курсы</a>
     </div>
 </section>
 
@@ -154,25 +154,25 @@
 <!-- Features -->
 
 <section id="features">
-    <h1>Awesome Features</h1>
-    <p>Replenish man have thing gathering lights yileding shall you</p>
+    <h1>Наши преимущества</h1>
+    <p>Lorem ipsum dolor sit amet consectetur</p>
     <div class="features-base">
         <div class="features-box">
             <i class="fa fa-graduation-cap"></i>
-            <h3>Scholarship Facility</h3>
-            <p>One make creepeth, man bearing theria firmament won't great heaven</p>
+            <h3>Стипендия</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
         </div>
 
         <div class="features-box">
             <i class="fa fa-globe"></i>
-            <h3>Online Course</h3>
-            <p>One make creepeth, man bearing theria firmament won't great heaven</p>
+            <h3>Онлайн курсы</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
         </div>
 
         <div class="features-box">
             <i class="fa fa-award"></i>
-            <h3>Global Certification</h3>
-            <p>One make creepeth, man bearing theria firmament won't great heaven</p>
+            <h3>Глобальная сертификация</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
         </div>
     </div>
 </section>
@@ -180,15 +180,15 @@
 <!-- Courses -->
 
 <section id="course">
-    <h1>Our Popular Courses</h1>
-    <p>Replenish man have thing gathering lights yileding shall you</p>
+    <h1>Наши курсы</h1>
+    <p>Lorem ipsum dolor sit amet consectetur</p>
     <div class="course-box">
 
         <div class="courses">
             <img src="{% static 'images/english lvls/general.jpeg' %}" alt="">
             <div class="details">
-                <span>Updated 15/03/23</span>
-                <h6>General English</h6>
+                <span>Измененно 15/03/23</span>
+                <h6>Общий английский</h6>
                 <div class="star">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -199,15 +199,15 @@
                 </div>
             </div>
             <div class="cost">
-                $12.99
+                500 сом
             </div>
         </div>
 
         <div class="courses">
             <img src="{% static 'images/english lvls/individual.png' %}" alt="">
             <div class="details">
-                <span>Updated 15/03/23</span>
-                <h6>Individual lessons</h6>
+                <span>Изменено 15/03/23</span>
+                <h6>Индивидуальные занятия </h6>
                 <div class="star">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -218,15 +218,15 @@
                 </div>
             </div>
             <div class="cost">
-                $18.99
+                900 сом
             </div>
         </div>
 
         <div class="courses">
             <img src="{% static 'images/english lvls/english for kids.png' %}" alt="">
             <div class="details">
-                <span>Updated 15/03/23</span>
-                <h6>English for kids</h6>
+                <span>Изменено 15/03/23</span>
+                <h6>Английский для детей</h6>
                 <div class="star">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -237,15 +237,15 @@
                 </div>
             </div>
             <div class="cost">
-                $24.99
+                800 сом
             </div>
         </div>
 
         <div class="courses">
             <img src="{% static 'images/english lvls/online.jpg' %}" alt="">
             <div class="details">
-                <span>Updated 15/03/23</span>
-                <h6>Online courses</h6>
+                <span>Изменено 15/03/23</span>
+                <h6>Онлайн занятия</h6>
                 <div class="star">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -256,15 +256,15 @@
                 </div>
             </div>
             <div class="cost">
-                $10.99
+                400 сом
             </div>
         </div>
 
         <div class="courses">
             <img src="{% static 'images/english lvls/iels toefl.jpg' %}" alt="">
             <div class="details">
-                <span>Updated 15/03/23</span>
-                <h6> IELTS and TOEFL</h6>
+                <span>Изменено 15/03/23</span>
+                <h6> IELTS и TOEFL</h6>
                 <div class="star">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -275,15 +275,15 @@
                 </div>
             </div>
             <div class="cost">
-                $25.99
+                800 сом
             </div>
         </div>
 
         <div class="courses">
             <img src="{% static 'images/english lvls/eap.jpg' %}" alt="">
             <div class="details">
-                <span>Updated 15/03/23</span>
-                <h6>English for Academic Purposes (EAP)</h6>
+                <span>Изменено 15/03/23</span>
+                <h6>Английский для академический целей</h6>
                 <div class="star">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -294,7 +294,7 @@
                 </div>
             </div>
             <div class="cost">
-                $30.99
+                600 сом
             </div>
         </div>
 
@@ -307,33 +307,33 @@
 
 <section id="registration">
     <div class="reminder">
-        <p>Get an online Course for Free</p>
-        <h1>Register To Get It</h1>
+        <p>Получи бесплантный урок</p>
+        <h1>Зарегистрируйся сейчас</h1>
 
         <div class="time">
             <div class="date">
-                18 <br> Days
+                18 <br> Дней
             </div>
             <div class="date">
-                23 <br> Hours
+                23 <br> часа
             </div>
             <div class="date">
-                06 <br> Minutes
+                06 <br> Минут
             </div>
             <div class="date">
-                58 <br> Seconds
+                58 <br> Секунд
             </div>
 
         </div>
     </div>
 
     <div class="form">
-        <h3>Create Free Account NOW!</h3>
-        <input type="text" placeholder="Name" name="">
-        <input type="text" placeholder="Email Addres" name="">
-        <input type="text" placeholder="Phone Number" name="">
+        <h3>Зарегистрируйся сейчас!</h3>
+        <input type="text" placeholder="Имя" name="">
+        <input type="text" placeholder="Электронная почта" name="">
+        <input type="text" placeholder="Номер телефона" name="">
         <div class="btn">
-            <a class="yellow" href="#">Submit Form</a>
+            <a class="yellow" href="#">Подтвердить</a>
         </div>
     </div>
 </section>
@@ -341,14 +341,14 @@
 <!-- Profiles -->
 
 <section id="experts">
-    <h1>Our Employees</h1>
-    <p>Replenish man have thing gathering lights yileding shall you</p>
+    <h1>Наши сотрудниуи</h1>
+    <p>Lorem ipsum dolor sit amet consectetur</p>
     <div class="expert-box">
 
         <div class="profile">
             <img src="{% static 'images/pro1.webp' %}" alt="">
-            <h6>Ema Irnik</h6>
-            <p>Good Teacher</p>
+            <h6>Эмма Ирник</h6>
+            <p>Хороший учитель</p>
             <div class="pro-links">
                 <i class="fab fa-facebook-f"></i>
                 <i class="fab fa-instagram"></i>
@@ -359,8 +359,8 @@
 
         <div class="profile">
             <img src="{% static 'images/pro2.webp' %}" alt="">
-            <h6>Jason</h6>
-            <p>Not so bad</p>
+            <h6>Джейсон</h6>
+            <p>Неплохой учитель</p>
             <div class="pro-links">
                 <i class="fab fa-facebook-f"></i>
                 <i class="fab fa-instagram"></i>
@@ -371,8 +371,8 @@
 
         <div class="profile">
             <img src="{% static 'images/Onidzukaaaa.png' %}" alt="">
-            <h6>Eikichi Onizuka</h6>
-            <p>Great Teacher Onizuka</p>
+            <h6>Эйкити Онидзука</h6>
+            <p>Крутой учитель</p>
             <div class="pro-links">
                 <i class="fab fa-facebook-f"></i>
                 <i class="fab fa-instagram"></i>
@@ -383,8 +383,8 @@
 
         <div class="profile">
             <img src="{% static 'images/pro4.webp' %}" alt="">
-            <h6>Jennifer</h6>
-            <p>Mediocre</p>
+            <h6>Дженнифер</h6>
+            <p>Посредственность</p>
             <div class="pro-links">
                 <i class="fab fa-facebook-f"></i>
                 <i class="fab fa-instagram"></i>
