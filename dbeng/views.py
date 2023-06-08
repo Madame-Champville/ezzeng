@@ -25,6 +25,16 @@ def enroll(request):
     context = {'form': form}
     return render(request, 'payment.html', context)
 
+def teacher(request):
+    form = TeacherForm()
+    if request.method == 'POST':
+        form = TeacherForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse('Успешно!!!')
+    context = {'form': form}
+    return render(request, 'employee.html', context)
+
 
 class StudentList(generic.ListView):
     model = Student

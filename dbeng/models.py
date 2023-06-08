@@ -4,47 +4,49 @@ from datetime import datetime
 
 
 
-class User(models.Model):
+
+
+class Student(models.Model):
     first_name = models.CharField(max_length=50, default='Имя')
     last_name = models.CharField(max_length=50, default='Фамилия')
     phone = models.CharField(max_length=50, default='Номер')
     email = models.EmailField(max_length=50, default='Почта')
-    courses = models.CharField(max_length=50,default='Выберите курс', choices=(
-    ("General English", "Общий английский"), ("Individual lessons", "Индивидуальные занятия"), ("English for kids", "Английский для детей"), ("Online lessons", "Онлайн занятия"), ("IELTS and TOEFL", "IELTS и TOEFL"),("EAP", "Английский для академический целей")))
-
+    course = models.CharField(max_length=50, default='Выберите курс', choices=(
+        ("General English", "Общий английский"), ("Individual lessons", "Индивидуальные занятия"),
+        ("English for kids", "Английский для детей"), ("Online lessons", "Онлайн занятия"),
+        ("IELTS and TOEFL", "IELTS и TOEFL"), ("EAP", "Английский для академический целей")))
     def __str__(self):
         return self.first_name
 
-class Student(models.Model):
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
-    email = models.EmailField(max_length=50)
-    address = models.CharField(max_length=50)
-    enrollment_date = models.DateField(max_length=50)
-    birthday = models.DateField(max_length=50)
-
-    def __str__(self):
-        return self.first_name
 class Teacher(models.Model):
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
-    email = models.EmailField(max_length=50)
-    phone = models.CharField(max_length=50)
-    address = models.CharField(max_length=50)
-    hire_date = models.DateField(max_length=50)
-    birthday = models.DateField(max_length=50)
+    first_name = models.CharField(max_length=50, default='Имя')
+    last_name = models.CharField(max_length=50, default='Фамилия')
+    phone = models.CharField(max_length=50, default='Номер')
+    email = models.EmailField(max_length=50, default='Почта')
+    course = models.CharField(max_length=50, default='Выберите курс', choices=(
+        ("General English", "Общий английский"), ("Individual lessons", "Индивидуальные занятия"),
+        ("English for kids", "Английский для детей"), ("Online lessons", "Онлайн занятия"),
+        ("IELTS and TOEFL", "IELTS и TOEFL"), ("EAP", "Английский для академический целей")))
+
     def __str__(self):
         return self.first_name
 
 class Course(models.Model):
     course_name = models.CharField(max_length=50)
-    members = models.IntegerField()
     course_level = models.CharField(max_length=50, choices=(("A1", "begginer"),("A2", "Elementary"), ("B1", "pre-intermedia"), ("B2", "Intermedia")))
     course_duration = models.IntegerField(choices=((2, "2 month"),(4, "4 months"), (6, "6 months"), (6, "6 months")))
     fee = models.FloatField(default=0)
 
     def __str__(self):
         return self.course_name
+
+
+class Course_individual(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
+    members = models.IntegerField()
+
+
 
 
 class Attendance(models.Model):
@@ -94,12 +96,10 @@ class Schedule(models.Model):
     def __str__(self):
         return self.day_per_week
 
-
 class Payment(models.Model):
-    student = models.ForeignKey(User, on_delete=models.CASCADE)
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
     course_name = models.CharField(max_length=50, default='Не выбран курс')
     payment_date = models.DateField(auto_now_add=True, verbose_name='Дата оплаты')
     payment_amount = models.FloatField(default=0, verbose_name='Сумма платежа')
 
-    def __str__(self):
-        return self.payment_amount
+

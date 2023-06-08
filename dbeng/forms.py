@@ -4,11 +4,11 @@ from django import forms
 class UserForm(forms.ModelForm):
 
     class Meta:
-        model = User
-        fields = ['first_name', 'last_name', 'phone', 'email', 'courses']
+        model = Student
+        fields = ['first_name', 'last_name', 'phone', 'email', 'course']
 
-class PaymentForm(forms.ModelForm):
+class TeacherForm(forms.ModelForm):
 
     class Meta:
-        model = Payment
-        fields = ['student', 'course_name', 'payment_amount']
+        model = Teacher
+        fields = ['first_name', 'last_name', 'phone', 'email', 'course']

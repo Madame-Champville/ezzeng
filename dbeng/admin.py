@@ -1,24 +1,29 @@
 from django.contrib import admin
-from .models import Student, Teacher, Course, Attendance, Grade, Material, Schedule, Payment, User, Assessment
+from .models import Student, Teacher, Course, Attendance, Grade, Material, Schedule, Payment, Assessment
 
 
-@admin.register(User)
-class UserAdmin(admin.ModelAdmin):
-    list_display = ['first_name', 'last_name', 'phone', 'email', 'courses']
-    search_fields = ['name',]
 @admin.register(Student)
-class StudentAdmin(admin.ModelAdmin):
-    list_display = ['first_name', 'last_name', 'email',  'address', 'enrollment_date', 'birthday']
-    search_fields = ['first_name', 'last_name']
+class UserAdmin(admin.ModelAdmin):
+    list_display = ['get_row_number', 'first_name', 'last_name', 'phone', 'email', 'course']
+    search_fields = ['name',]
+    list_filter = ['course',]
+
+    def get_row_number(self, obj):
+        queryset = Student.objects.all().order_by('-id')
+        row_number = list(queryset).index(obj) + 1
+        return row_number
+
+    get_row_number.short_description = '№'
 
 @admin.register(Teacher)
 class TeacherAdmin(admin.ModelAdmin):
-    list_display = ['first_name', 'last_name', 'email', 'phone', 'address', 'hire_date', 'birthday']
-    search_fields = ['first_name', 'last_name']
+    list_display = ['first_name', 'last_name', 'phone', 'email', 'course']
+    search_fields = ['name', ]
+    list_filter = ['course', ]
 
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
-    list_display = ['course_name', 'members', 'course_level', 'course_duration', 'fee']
+    list_display = ['course_name', 'course_level', 'course_duration', 'fee']
     search_fields = ['course_name', 'description']
 
 @admin.register(Attendance)
@@ -48,5 +53,12 @@ class ScheduleAdmin(admin.ModelAdmin):
 
 @admin.register(Payment)
 class PaymentAdmin(admin.ModelAdmin):
-    list_display = ['student', 'course_name', 'payment_date', 'payment_amount']
+    list_display = ['get_row_number', 'student', 'course_name', 'payment_date', 'payment_amount']
     search_fields = ['student', 'payment_date']
+
+    def get_row_number(self, obj):
+        queryset = Payment.objects.all().order_by('-id')
+        row_number = list(queryset).index(obj) + 1
+        return row_number
+
+    get_row_number.short_description = '№'
