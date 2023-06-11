@@ -41,30 +41,31 @@ class Course(models.Model):
         return self.course_name
 
 
-class Course_individual(models.Model):
-    student = models.ForeignKey(Student, on_delete=models.CASCADE)
-    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
-    members = models.IntegerField()
-
-
 
 
 class Attendance(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
-    course = models.ForeignKey(Course, on_delete=models.CASCADE)
-    attendance_day = models.DateField(auto_now=True)
+    course = models.CharField(max_length=50, default='Выберите курс', choices=(
+        ("General English", "Общий английский"), ("Individual lessons", "Индивидуальные занятия"),
+        ("English for kids", "Английский для детей"), ("Online lessons", "Онлайн занятия"),
+        ("IELTS and TOEFL", "IELTS и TOEFL"), ("EAP", "Английский для академический целей")))
+    attendance_day = models.DateField()
     attendance_status = models.CharField(max_length=50, choices=(("-", "absence"), ("+", "present")))
 
     def __str__(self):
         return self.attendance_status
 
 class Assessment(models.Model):
-    student = models.ForeignKey(Student, on_delete=models.CASCADE)
-    course = models.ForeignKey(Course, on_delete=models.CASCADE)
-    assessment = models.IntegerField()
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, verbose_name='Имя студента')
+    course = models.CharField(max_length=50, default='Выберите курс', choices=(
+        ("General English", "Общий английский"), ("Individual lessons", "Индивидуальные занятия"),
+        ("English for kids", "Английский для детей"), ("Online lessons", "Онлайн занятия"),
+        ("IELTS and TOEFL", "IELTS и TOEFL"), ("EAP", "Английский для академический целей")),verbose_name='Выберите курс')
+    assessment_date = models.DateField(auto_now_add=True)
+    file = models.FileField(upload_to='material/', verbose_name='Прикрепите файл')
 
     def __str__(self):
-        return self.assessment
+        return self.course
 
 
 
@@ -99,7 +100,7 @@ class Schedule(models.Model):
 class Payment(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     course_name = models.CharField(max_length=50, default='Не выбран курс')
-    payment_date = models.DateField(auto_now_add=True, verbose_name='Дата оплаты')
+    payment_date = models.DateField()
     payment_amount = models.FloatField(default=0, verbose_name='Сумма платежа')
 
 

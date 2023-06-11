@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Student, Teacher, Course, Attendance, Grade, Material, Schedule, Payment, Assessment
+from datetime import datetime
 
 
 @admin.register(Student)
@@ -24,7 +25,7 @@ class TeacherAdmin(admin.ModelAdmin):
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
     list_display = ['course_name', 'course_level', 'course_duration', 'fee']
-    search_fields = ['course_name', 'description']
+    search_fields = ['course_name', 'course_level']
 
 @admin.register(Attendance)
 class AttendanceAdmin(admin.ModelAdmin):
@@ -33,8 +34,8 @@ class AttendanceAdmin(admin.ModelAdmin):
 
 @admin.register(Assessment)
 class AssessmentAdmin(admin.ModelAdmin):
-    list_display = ['student', 'course', 'assessment']
-    search_fields = ['student', 'assessment']
+    list_display = ['student', 'course', 'assessment_date', 'file']
+    search_fields = ['student', ]
 
 @admin.register(Grade)
 class GradeAdmin(admin.ModelAdmin):

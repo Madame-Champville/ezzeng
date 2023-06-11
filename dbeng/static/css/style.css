@@ -1194,6 +1194,18 @@ footer .copyright .pro-links i:hover {
     height: 100%;
 }
 
+#reg_back {
+    background-image: linear-gradient(rgba(9, 5, 54, 0.3), rgb(9, 5, 46, 0.7)), url("harvard.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #4070f4; */
+}
+
+
 
 @media (max-width: 768px) {
     nav {

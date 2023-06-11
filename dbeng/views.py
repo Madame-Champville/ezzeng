@@ -35,6 +35,20 @@ def teacher(request):
     context = {'form': form}
     return render(request, 'employee.html', context)
 
+def assessment(request):
+    if request.method == 'POST':
+        form = AssessmentForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()  # Сохранение данных формы в базе данных
+            return HttpResponse('success')  # Перенаправление на страницу успешного завершения
+    else:
+        form = AssessmentForm()
+
+    context = {
+        'form': form
+    }
+    return render(request, 'assessment.html', context)
+
 
 class StudentList(generic.ListView):
     model = Student
